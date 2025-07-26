@@ -6,6 +6,9 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
+Route::get('/pricing', function () {
+    return Inertia::render('pricing');
+})->name('pricing');
 Route::get('/school-registration', function () {
     return Inertia::render('school-registration');
 })->name('school-registration');

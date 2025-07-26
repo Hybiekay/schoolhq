@@ -33,4 +33,11 @@ class School extends Model
     {
         return $this->hasMany(User::class)->where('is_school_admin', true);
     }
+
+
+    protected $hidden = [
+        'admin_password',
+        'admin_email',
+        'principal_phone',
+    ];
 }

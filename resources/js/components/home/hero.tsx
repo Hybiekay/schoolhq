@@ -1,5 +1,6 @@
 import React from 'react';
 import CTAButton from './c-t-a-button';
+import { router } from '@inertiajs/react';
 
 const Hero: React.FC = () => {
     return (
@@ -13,7 +14,7 @@ const Hero: React.FC = () => {
                         Built for African schools — Unlimited student records, dedicated subdomain, and smart tools to simplify school operations.
                     </p>
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                        <CTAButton>Start Free Trial</CTAButton>
+                        <CTAButton onClick={() => router.visit("/school-registration")}>Start Free Trial</CTAButton>
                         <CTAButton variant="outline">Book a Demo</CTAButton>
                     </div>
                 </div>

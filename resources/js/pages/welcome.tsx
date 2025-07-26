@@ -3,12 +3,11 @@ import Features from '@/components/home/feature';
 import Footer from '@/components/home/footer';
 import Header from '@/components/home/header';
 import Hero from '@/components/home/hero';
-import Pricing from '@/components/home/pricing';
+// Removed: import Pricing from '@/components/home/pricing';
 import SchoolSearch from '@/components/home/school-search';
 import Testimonials from '@/components/home/testimonials';
 import WhyAfrica from '@/components/home/why-africa';
 import React from 'react';
-
 
 const App: React.FC = () => {
     return (
@@ -16,10 +15,8 @@ const App: React.FC = () => {
             <Header />
             <main>
                 <Hero />
-                <SchoolSearch /> {/* Add this line */}
-
+                <SchoolSearch />
                 <Features />
-                <Pricing />
                 <WhyAfrica />
                 <Testimonials />
                 <FAQ />

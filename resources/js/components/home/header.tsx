@@ -1,7 +1,11 @@
-import React from 'react';
-import CTAButton from './c-t-a-button';
+import React from 'react'
+import { router, usePage } from '@inertiajs/react'
+import CTAButton from './c-t-a-button'
 
 const Header: React.FC = () => {
+    const { url } = usePage()
+    const isHome = url === '/'
+
     return (
         <header className="sticky top-0 z-50 bg-white shadow-sm">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -13,14 +17,24 @@ const Header: React.FC = () => {
                 </div>
 
                 <nav className="hidden md:flex space-x-8">
-                    <a href="#features" className="hover:text-blue-600 transition">Features</a>
-                    <a href="#pricing" className="hover:text-blue-600 transition">Pricing</a>
-                    <a href="#faq" className="hover:text-blue-600 transition">FAQ</a>
-                    <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+                    {isHome ? (
+                        <>
+                            <a href="#features" className="hover:text-blue-600 transition">Features</a>
+                            <a href="#faq" className="hover:text-blue-600 transition">FAQ</a>
+                            <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+                        </>
+                    ) : (
+                        <>
+                            <a href="/#features" className="hover:text-blue-600 transition">Features</a>
+                            <a href="/#faq" className="hover:text-blue-600 transition">FAQ</a>
+                            <a href="/#contact" className="hover:text-blue-600 transition">Contact</a>
+                        </>
+                    )}
+                    <a href="/pricing" className="hover:text-blue-600 transition">Pricing</a>
                 </nav>
 
                 <div className="hidden md:block">
-                    <CTAButton variant="outline" size="sm">Login</CTAButton>
+                    <CTAButton onClick={() => { router.visit("/login") }} variant="outline" size="sm">Login</CTAButton>
                 </div>
 
                 <button className="md:hidden">
@@ -30,7 +44,7 @@ const Header: React.FC = () => {
                 </button>
             </div>
         </header>
-    );
-};
+    )
+}
 
-export default Header;
+export default Header
