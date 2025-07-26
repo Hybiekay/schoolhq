@@ -18,7 +18,10 @@ class School extends Model
         'phone',
         'principal_name',
         'principal_email',
-        'principal_phone'
+        'principal_phone',
+        "admin_name",
+        "admin_email",
+        "admin_password",
     ];
 
     public function owner()
